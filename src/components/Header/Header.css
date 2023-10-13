@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 96px;
+    width: 100%;
+    border-bottom: 1px solid #EEEEEE;
+    padding-left: 30px;
+}
+
+.topTitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: #001122;
+    line-height: 28px;
+    opacity: 30%;
+}
+
+.bottomTitle {
+    font-size: 22px;
+    font-weight: 600;
+    color: #001122;
+    line-height: 28px;
+    opacity: 80%;
+}

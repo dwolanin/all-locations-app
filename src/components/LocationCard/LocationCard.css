@@ -1,0 +1,15 @@
+.locationCard {
+    width: 340px;
+    border: 1px solid rgba(0, 17, 34, 0.1);
+    padding: 15px 25px;
+    border-radius: 2px;
+}
+
+.locationCard h4 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 32px;
+    color: #001122;
+    opacity: 80%;
+    margin:0;
+}

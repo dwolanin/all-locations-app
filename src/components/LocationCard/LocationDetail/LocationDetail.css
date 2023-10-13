@@ -1,0 +1,22 @@
+.locationDetail {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.locationDetail span {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #001122;
+    opacity: 80%;
+}
+
+.locationDetail svg {
+    width: 14px;
+    height: 14px;
+}
+
+.locationDetail g {
+    fill: rgba(0,0,0,0.3);
+}
