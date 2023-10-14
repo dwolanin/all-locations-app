@@ -5,7 +5,7 @@ import "./AllLocations.css";
 import {useAllLocations} from "../api/useAllLocations.ts";
 
 export const AllLocations: React.FC = () => {
-    const allLocations = useAllLocations();
+    const {allLocations, views, bumpViews} = useAllLocations();
 
     return (
         <React.Fragment>
@@ -14,6 +14,8 @@ export const AllLocations: React.FC = () => {
                 {allLocations.map((location) => (
                     <LocationCard key={location.id}
                                   location={location}
+                                  views={views[location.id] || 0}
+                                  bumpViews={() => bumpViews(location.id)}
                     />
                 ))}
             </div>
