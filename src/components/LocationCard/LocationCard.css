@@ -1,8 +1,10 @@
 .locationCard {
-    width: 340px;
+    min-width: 340px;
     border: 1px solid rgba(0, 17, 34, 0.1);
     padding: 15px 25px;
     border-radius: 2px;
+    position: relative;
+    cursor: pointer;
 }
 
 .locationCard h4 {
@@ -12,4 +14,8 @@
     color: #001122;
     opacity: 80%;
     margin:0;
+}
+
+.locationCard:hover {
+    background: rgb(246, 246, 246);
 }
