@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 
-type Location = {
+export type Location = {
     id: string;
     createdAt: string;
     name: string;

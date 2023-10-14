@@ -11,12 +11,10 @@ export const AllLocations: React.FC = () => {
         <React.Fragment>
             <Header topTitle="All locations" bottomTitle="Acme locations"/>
             <div className="allLocations">
-                {allLocations.map(({name, createdAt, id, userCount, description}) => (
-                    <LocationCard key={id}
-                                  usersCount={userCount}
-                                  locationName={name}
-                                  views={5}
-                                  time={new Date(createdAt).getUTCDate().toString()} />
+                {allLocations.map((location) => (
+                    <LocationCard key={location.id}
+                                  location={location}
+                    />
                 ))}
             </div>
         </React.Fragment>

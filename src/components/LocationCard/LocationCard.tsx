@@ -1,26 +1,30 @@
 import React, {useState} from "react";
-import {LocationDetail} from "./LocationDetail/LocationDetail";
 import "./LocationCard.css";
 import {EditLocationIcon} from "./EditLocationIcon/EditLocationIcon.tsx";
-import {getFormattedTime} from "./utils/getFormattedTime.ts";
+import {LocationModal} from "./LocationModal/LocationModal.tsx";
+import {LocationDetails} from "./LocationDetails/LocationDetails.tsx";
+import {Location} from "../../api/useAllLocations.ts";
 
 type Props = {
-    locationName: string;
-    usersCount: number;
-    time: string;
-    views: number;
+    location: Location
 }
 
-export const LocationCard: React.FC<Props> = ({locationName, time, usersCount, views}) => {
+export const LocationCard: React.FC<Props> = ({location}) => {
     const [hover, setHover] = useState(false);
+    const [open, toggleModal] = useState(false);
 
     return (
-        <div className="locationCard" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-            <h4>{locationName}</h4>
-            <LocationDetail text={`${usersCount} Users`} icon="users"/>
-            <LocationDetail text={getFormattedTime(time)} icon="timezone"/>
-            <LocationDetail text={`${views} Views`} icon="views"/>
+        <div className="locationCard"
+             onMouseEnter={() => setHover(true)}
+             onMouseLeave={() => setHover(false)}
+             onClick={() => toggleModal(true)}
+        >
             {hover && <EditLocationIcon/>}
+            <h4>{location.name}</h4>
+            <LocationDetails location={location} views={5}/>
+            <LocationModal open={open} location={location} closeModal={() => {
+                toggleModal(false)
+            }}/>
         </div>
     )
 }

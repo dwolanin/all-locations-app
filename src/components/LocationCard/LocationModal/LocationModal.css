@@ -1,0 +1,55 @@
+.locationModal {
+    padding: 0;
+    width: 440px;
+    border: none;
+    border-radius: 2px;
+}
+
+.locationModal::backdrop {
+    background: rgb(0, 17, 34);
+    opacity: 60%;
+}
+
+.locationModal .modalHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 56px;
+    align-items: center;
+    padding: 16px 25px;
+}
+
+.locationModal .modalHeader .modalHeaderTitle {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgb(0, 17, 34);
+    opacity: 80%;
+}
+
+.locationModal .modalBody {
+    padding: 0px 25px 10px 25px;
+}
+
+.locationModal .modalBody .modalDescription {
+    margin: 20px 0 25px 0;
+}
+
+.locationModal .modalBody .modalDescription .modalDescriptionTitle {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgb(0, 17, 34);
+}
+
+.locationModal .modalBody .modalDescription .modalDescriptionText {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgb(0, 17, 34);
+}
+
+.modalFooter {
+    margin: 0px 25px 10px 25px;
+    float: right;
+}
