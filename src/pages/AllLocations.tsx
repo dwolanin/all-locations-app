@@ -4,7 +4,7 @@ import {LocationCard} from "../components/LocationCard/LocationCard.tsx";
 import "./AllLocations.css";
 import {useAllLocations} from "../api/useAllLocations.ts";
 import {useLocationViews} from "./hooks/useLocationViews.ts";
-import {LocationModal} from "../components/LocationCard/LocationModal/LocationModal.tsx";
+import {LocationModal} from "./LocationModal/LocationModal.tsx";
 
 export const AllLocations: React.FC = () => {
     const allLocations = useAllLocations();

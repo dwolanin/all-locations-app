@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "./LocationCard.css";
 import {EditLocationIcon} from "./EditLocationIcon/EditLocationIcon.tsx";
-import {LocationDetails} from "./LocationDetails/LocationDetails.tsx";
+import {LocationDetails} from "../LocationDetails/LocationDetails.tsx";
 import {Location} from "../../api/useAllLocations.ts";
 
 type Props = {

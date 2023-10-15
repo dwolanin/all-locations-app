@@ -1,11 +1,11 @@
 // Modal as a separate component
 import React, { useEffect, useRef } from "react";
 import "./LocationModal.css"
-import {Location} from "../../../api/useAllLocations.ts";
-import {Icon} from "../../Icon/Icon.tsx";
-import {LocationDetails} from "../LocationDetails/LocationDetails.tsx";
-import {Button} from "../../Button/Button.tsx";
-import {Views} from "../../../pages/hooks/useLocationViews.ts";
+import {Location} from "../../api/useAllLocations.ts";
+import {Icon} from "../../components/Icon/Icon.tsx";
+import {LocationDetails} from "../../components/LocationDetails/LocationDetails.tsx";
+import {Button} from "../../components/Button/Button.tsx";
+import {Views} from "../hooks/useLocationViews.ts";
 
 type Props = {
     locationId: string | null;

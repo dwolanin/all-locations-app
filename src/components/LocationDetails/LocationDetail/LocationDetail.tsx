@@ -1,6 +1,6 @@
 import React from "react";
-import {Icon} from "../../../Icon/Icon";
-import type {Icons} from "../../../Icon/types";
+import {Icon} from "../../Icon/Icon";
+import type {Icons} from "../../Icon/Icon";
 import "./LocationDetail.css"
 
 type Props = {
