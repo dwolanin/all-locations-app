@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-type Views = {
+export type Views = {
     [k: string]: number
 }
 export const useLocationViews = () => {

@@ -5,25 +5,33 @@ import {Location} from "../../../api/useAllLocations.ts";
 import {Icon} from "../../Icon/Icon.tsx";
 import {LocationDetails} from "../LocationDetails/LocationDetails.tsx";
 import {Button} from "../../Button/Button.tsx";
+import {Views} from "../../../pages/hooks/useLocationViews.ts";
 
 type Props = {
-    open?: boolean;
+    locationId: string | null;
     closeModal: () => void;
-    location: Location
-    views: number
+    locations: Location[]
+    views: Views
 }
 
-export const LocationModal: React.FC<Props> = ({ open, closeModal, location, views }) => {
+export const LocationModal: React.FC<Props> = ({ locationId, closeModal, locations, views }) => {
     const ref = useRef<HTMLDialogElement>(null);
-    const {name, description} = location;
+    const location = locationId && locations.find(location => location.id === locationId)
 
     useEffect(() => {
-        if (open) {
+        if (locationId) {
             ref.current?.showModal();
         } else {
             ref.current?.close();
         }
-    }, [open]);
+    }, [locationId]);
+
+    if (!location) {
+        ref.current?.close();
+        return null;
+    }
+
+    const {name, description} = location;
 
     return (
         <dialog
@@ -39,7 +47,7 @@ export const LocationModal: React.FC<Props> = ({ open, closeModal, location, vie
                 }}><Icon name="close" /></div>
             </div>
             <div className="modalBody">
-                <LocationDetails location={location} views={views} />
+                <LocationDetails location={location} views={views[locationId]} />
 
                 <div className="modalDescription">
                     <div className="modalDescriptionTitle">Description:</div>

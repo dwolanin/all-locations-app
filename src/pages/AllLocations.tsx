@@ -1,13 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 import {Header} from "../components/Header/Header.tsx";
 import {LocationCard} from "../components/LocationCard/LocationCard.tsx";
 import "./AllLocations.css";
 import {useAllLocations} from "../api/useAllLocations.ts";
 import {useLocationViews} from "./hooks/useLocationViews.ts";
+import {LocationModal} from "../components/LocationCard/LocationModal/LocationModal.tsx";
 
 export const AllLocations: React.FC = () => {
     const allLocations = useAllLocations();
     const {views, bumpViews} = useLocationViews();
+    const [locationId, setLocationId] = useState<string | null>(null);
+
+    const onModalOpen = (id: string) => {
+        setLocationId(id);
+        bumpViews(id);
+    }
 
     return (
         <React.Fragment>
@@ -17,9 +24,13 @@ export const AllLocations: React.FC = () => {
                     <LocationCard key={location.id}
                                   location={location}
                                   views={views[location.id] || 0}
-                                  bumpViews={() => bumpViews(location.id)}
+                                  onModalOpen={() => onModalOpen(location.id)}
                     />
                 ))}
+                <LocationModal locationId={locationId} locations={allLocations}
+                               views={views} closeModal={() => {
+                    setLocationId(null)
+                }}/>
             </div>
         </React.Fragment>
     )
