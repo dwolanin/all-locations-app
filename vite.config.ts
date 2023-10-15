@@ -10,4 +10,9 @@ export default defineConfig({
     // A minimatch pattern, or array of patterns, which specifies the files in the build the plugin should include.
     include: "**/*.svg",
   })],
+  test: {
+    globals: true,
+    environment: 'happy-dom',
+    setupFiles: './setup.js',
+  },
 })

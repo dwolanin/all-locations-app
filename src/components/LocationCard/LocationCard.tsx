@@ -18,6 +18,7 @@ export const LocationCard: React.FC<Props> = ({location, views, onModalOpen}) =>
              onMouseEnter={() => setHover(true)}
              onMouseLeave={() => setHover(false)}
              onClick={onModalOpen}
+             role="button"
         >
             {hover && <EditLocationIcon/>}
             <h4>{location.name}</h4>
