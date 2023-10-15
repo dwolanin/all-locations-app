@@ -3,9 +3,11 @@ import {Header} from "../components/Header/Header.tsx";
 import {LocationCard} from "../components/LocationCard/LocationCard.tsx";
 import "./AllLocations.css";
 import {useAllLocations} from "../api/useAllLocations.ts";
+import {useLocationViews} from "./hooks/useLocationViews.ts";
 
 export const AllLocations: React.FC = () => {
-    const {allLocations, views, bumpViews} = useAllLocations();
+    const allLocations = useAllLocations();
+    const {views, bumpViews} = useLocationViews();
 
     return (
         <React.Fragment>
