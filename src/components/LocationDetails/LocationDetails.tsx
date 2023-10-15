@@ -11,6 +11,7 @@ type Props = {
 export const LocationDetails: React.FC<Props> = ({location, views}) => {
     const { userCount, createdAt } = location;
 
+    // in standard app these cases would be handled by i18n tooling, but again, no time for that now
     const getViewsLabel = (views: number) => {
         if (views === 1) {
             return "View";

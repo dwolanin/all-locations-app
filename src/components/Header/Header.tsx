@@ -6,6 +6,7 @@ type Props = {
     bottomTitle: string;
 };
 
+// fix a11y
 export const Header: React.FC<Props> = ({topTitle, bottomTitle}) => {
     return (
         <div className="header">

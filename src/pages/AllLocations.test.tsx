@@ -2,7 +2,6 @@ import {beforeEach, describe, expect, it, vi} from "vitest";
 import {Location} from "../api/useAllLocations.ts";
 import {render, screen, waitFor} from "@testing-library/react";
 import {AllLocations} from "./AllLocations.tsx";
-import userEvent from "@testing-library/user-event";
 
 const locations: Location[] = [{
     name: 'Acme HQ',

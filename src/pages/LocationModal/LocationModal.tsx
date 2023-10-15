@@ -33,6 +33,13 @@ export const LocationModal: React.FC<Props> = ({ locationId, closeModal, locatio
 
     const {name, description} = location;
 
+    const onButtonClick = (ev: React.MouseEvent<HTMLElement>) => {
+        ev.stopPropagation();
+        closeModal();
+    }
+
+    // decided to play with HTML dialog element here, React.Portal will do the trick as well and after all might be better choice
+    // but wanted to play with dialog as I had no opportunity since now
     return (
         <dialog
             ref={ref}
@@ -41,10 +48,7 @@ export const LocationModal: React.FC<Props> = ({ locationId, closeModal, locatio
         >
             <div className="modalHeader">
                 <div className="modalHeaderTitle">{name}</div>
-                <div onClick={(ev) => {
-                    ev.stopPropagation();
-                    closeModal();
-                }}><Icon name="close" /></div>
+                <div onClick={onButtonClick}><Icon name="close" /></div>
             </div>
             <div className="modalBody">
                 <LocationDetails location={location} views={views[locationId]} />
@@ -55,10 +59,7 @@ export const LocationModal: React.FC<Props> = ({ locationId, closeModal, locatio
                 </div>
             </div>
             <div className="modalFooter">
-                <Button onClick={(ev) => {
-                    ev.stopPropagation();
-                    closeModal();
-                }}>Done</Button>
+                <Button onClick={onButtonClick}>Done</Button>
             </div>
         </dialog>
     );

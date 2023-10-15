@@ -7,7 +7,9 @@ import {useLocationViews} from "./hooks/useLocationViews.ts";
 import {LocationModal} from "./LocationModal/LocationModal.tsx";
 
 export const AllLocations: React.FC = () => {
+    // locations kept in internal State, no need to use Redux here for now
     const allLocations = useAllLocations();
+    // decided to keep views in separate state, not sure how it has to be persisted in db
     const {views, bumpViews} = useLocationViews();
     const [locationId, setLocationId] = useState<string | null>(null);
 
