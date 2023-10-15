@@ -1,1 +1,0 @@
-export type Icons = "close" | 'edit' | 'timezone' | 'users' | 'views';

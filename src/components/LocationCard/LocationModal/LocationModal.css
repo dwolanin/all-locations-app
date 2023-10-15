@@ -19,6 +19,10 @@
     padding: 16px 25px;
 }
 
+.locationModal .modalHeader svg {
+    cursor: pointer;
+}
+
 .locationModal .modalHeader .modalHeaderTitle {
     font-weight: 600;
     font-size: 16px;

@@ -3,8 +3,9 @@ import Edit from './icons/Edit.svg'
 import Close from './icons/Close.svg'
 import Users from './icons/Users.svg'
 import Views from './icons/Views.svg'
-import type {Icons} from "./types";
 import React from "react";
+
+export type Icons = "close" | 'edit' | 'timezone' | 'users' | 'views';
 
 type Props = {
     name: Icons
